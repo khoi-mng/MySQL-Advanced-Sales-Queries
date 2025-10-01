@@ -74,8 +74,22 @@ The dashboard highlights:
    ```bash
    git clone https://github.com/khoi-mng/MySQL-Advanced-Sales-Queries.git
 2. Import the dataset into MySQL
-3. Run    
+3. Run queries.sql
+4. Open Power BI file to explore visualization
+
 ---
+
+## Results
+1. Found MoM growth rate
+2. Identified top categories by country
+3. Segmented customers into high, medium, low spenders
+4. Verified Pareto rule holds
+
+---
+
+## Author
+1. Khoi Minh Nguyen
+2. GitHub: @khoi-mng
 
 
 
