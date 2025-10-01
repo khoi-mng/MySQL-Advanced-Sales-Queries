@@ -73,3 +73,9 @@ The dashboard highlights:
 1. Clone this repository
    ```bash
    git clone https://github.com/khoi-mng/MySQL-Advanced-Sales-Queries.git
+2. Import the dataset into MySQL
+3. Run    
+---
+
+
+
