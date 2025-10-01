@@ -6,7 +6,7 @@ The analysis demonstrates **SQL querying** for insights and **Power BI** dashboa
 
 ---
 
-## 📊 Dataset
+##  Dataset
 - **Rows:** 50,000
 - **Columns:** 8
 - **Key Fields:**
