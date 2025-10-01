@@ -71,10 +71,9 @@ The dashboard highlights:
 
 ##  How to Run
 1. Clone this repository
-   ```bash
-   git clone https://github.com/khoi-mng/MySQL-Advanced-Sales-Queries.git
+   https://github.com/khoi-mng/MySQL-Advanced-Sales-Queries.git
 2. Import the dataset into MySQL
-3. Run queries.sql
+3. Run `queries.sql`
 4. Open Power BI file to explore visualization
 
 ---
