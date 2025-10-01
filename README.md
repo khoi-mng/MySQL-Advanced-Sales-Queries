@@ -72,4 +72,4 @@ The dashboard highlights:
 ##  How to Run
 1. Clone this repository
    ```bash
-   git clone https://github.com/yourusername/ecommerce-sql-powerbi.git
+   git clone https://github.com/khoi-mng/MySQL-Advanced-Sales-Queries.git
