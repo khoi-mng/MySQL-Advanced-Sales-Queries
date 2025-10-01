@@ -21,7 +21,7 @@ The analysis demonstrates **SQL querying** for insights and **Power BI** dashboa
 
 ---
 
-## 🎯 Objectives
+##  Objectives
 1. Perform SQL-based business analysis:
    - Revenue growth
    - Customer segmentation
@@ -33,14 +33,14 @@ The analysis demonstrates **SQL querying** for insights and **Power BI** dashboa
 
 ---
 
-## 🛠️ Technologies Used
+##  Technologies Used
 - **SQL (MySQL)** → for queries and analysis
 - **Power BI** → for dashboards
 - **Excel/CSV** → dataset storage
 
 ---
 
-## 🧮 SQL Queries & Insights
+##  SQL Queries & Insights
 The project includes **10 queries**:
 1. Month-over-Month Revenue Growth Rate
 2. Country-Specific Top Product Category Ranking
@@ -57,7 +57,7 @@ The project includes **10 queries**:
 
 ---
 
-## 📈 Power BI Dashboard
+##  Power BI Dashboard
 The dashboard highlights:
 - **Revenue trends over time**
 - **Category performance by country**
@@ -69,7 +69,7 @@ The dashboard highlights:
 
 ---
 
-## 🚀 How to Run
+##  How to Run
 1. Clone this repository
    ```bash
    git clone https://github.com/yourusername/ecommerce-sql-powerbi.git
