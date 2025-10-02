@@ -145,21 +145,35 @@ ORDER BY AgeGroup, CAST(AVG(purchase_amount) AS DECIMAL(10,2)) DESC;
 
 
 
--- Query 7: Product Category Market Share Percentage (Uses CTE for total)
--- Goal: Calculate the percentage of total company revenue contributed by each product category.
+-- QUERY 7: Cumulative Market Share (Pareto Analysis)
+-- Goal: Identify the percentage of total revenue accounted for by the highest-grossing categories (80/20 Rule).
 
-WITH TotalRevenueCTE AS (
-    SELECT SUM(purchase_amount) AS TotalCompanyRevenue FROM ecommerce_transactions
+WITH CategoryRevenue AS (
+    -- Calculate Total Revenue per Category
+    SELECT
+        product_category,
+        SUM(purchase_amount) AS TotalRevenue
+    FROM ecommerce_transactions
+    GROUP BY product_category
+),
+CategoryShare AS (
+    -- Calculate individual percentage share of the grand total
+    SELECT
+        product_category,
+        TotalRevenue,
+        (TotalRevenue / SUM(TotalRevenue) OVER ()) AS RevenueShare
+    FROM CategoryRevenue
 )
 SELECT
-    t.product_category,
-    CONCAT('$', FORMAT(SUM(t.purchase_amount), 2)) AS CategoryRevenue,
-    -- Calculate percentage
-    CONCAT(FORMAT((SUM(t.purchase_amount) * 100.0 / (SELECT TotalCompanyRevenue FROM TotalRevenueCTE)), 2), '%') AS RevenueSharePercentage
-FROM ecommerce_transactions t
-GROUP BY t.product_category
-ORDER BY CAST(SUM(t.purchase_amount) AS DECIMAL(10,2)) DESC;
-
+    product_category,
+    CONCAT('$', FORMAT(TotalRevenue, 2)) AS TotalRevenueFormatted,
+    CONCAT(FORMAT(RevenueShare * 100, 2), '%') AS RevenueSharePercentage,
+    -- Calculate the cumulative percentage down the sorted list
+    CONCAT(
+        FORMAT(
+            SUM(RevenueShare) OVER (ORDER BY TotalRevenue DESC) * 100, 2), '%') AS CumulativeShare
+FROM CategoryShare
+ORDER BY TotalRevenue DESC;
 
 
 
